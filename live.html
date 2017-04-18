@@ -8,12 +8,16 @@
   <body style="width:100%; height:100%;">
   <toolbar title="Eagle Project" back="true"></toolbar>
   <content style="width:100%' height:100%;">
-    <iframe src="https://www.ustream.tv/combined-embed/23157258?videos=gallery&videosCount=8&html5ui" style="border: 0 none transparent;"  webkitallowfullscreen allowfullscreen width="900" height="550"></iframe>
+    <iframe id="ustream" src="" style="border: 0 none transparent;"  webkitallowfullscreen allowfullscreen width="900" height="550"></iframe>
   </content>
   <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
     <script>
       function onBackButtonClick() {
         window.location.assign("https://eagle.matthewwhitaker.me");
+      }
+      function onMHTML() {
+        document.getElementById("ustream").src="https://www.ustream.tv/combined-embed/23157258?videos=gallery&videosCount=8&html5ui";
+        
       }
     </script>
   </body>
