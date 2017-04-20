@@ -11,6 +11,7 @@
       <iframe id="ustream" src="" style="border: 0 none transparent;"  webkitallowfullscreen allowfullscreen width="900" height="550"></iframe>
     </content>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
+    <script src="https://matthewwhitaker.me/api/cookiemanager.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -32,8 +33,11 @@
       }
       function onMHTML() {
         document.getElementById("ustream").src="https://www.ustream.tv/combined-embed/23157258?videos=gallery&videosCount=8&html5ui";
-        writeUserToDatabase();
-       
+        if(!checkCookie("Visited")) {
+          writeUserToDatabase();
+        } else {
+          console.log("User already visited");
+        }
       }
       function writeUserToDatabase() {
         //Ask questions...
@@ -56,6 +60,7 @@
         var updates = {};
         updates['/eagleproject/users/'+newPushKey] = pushData;
         database.ref().update(updates);
+        setCookie("Visited","true",0.25);
       }
     </script>
   </body>
