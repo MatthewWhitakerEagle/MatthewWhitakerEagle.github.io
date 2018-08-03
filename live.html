@@ -1,67 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Matthew Whitaker Eagle Project</title>
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
     <meta name="viewport" content="width=device-width">
-  </head>
-  <body style="width:100%; height:100%;">
-  <toolbar title="Eagle Project" back="true"></toolbar>
-    <content style="width:100%' height:100%;">
-      <iframe id="ustream" src="" style="border: 0 none transparent;"  webkitallowfullscreen allowfullscreen width="900" height="900"></iframe>
-    </content>
-    <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
-    <script src="https://matthewwhitaker.me/api/cookiemanager.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script async src="https://matthewwhitaker.me/api/mhtml.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyB0JeujP9Jwwhuq9sDUh5aUDZFGrqaouCY",
-        authDomain: "matthew-whitaker.firebaseapp.com",
-        databaseURL: "https://matthew-whitaker.firebaseio.com",
-        projectId: "matthew-whitaker",
-        storageBucket: "matthew-whitaker.appspot.com",
-        messagingSenderId: "14655332261"
-      };
-      firebase.initializeApp(config);
-      
-      var database = firebase.database();
-    </script>
-    <script>
-      function onBackButtonClick() {
-        window.location.assign("https://eagle.matthewwhitaker.me");
-      }
-      function onMHTML() {
-        document.getElementById("ustream").src="https://www.ustream.tv/combined-embed/23157258?videos=gallery&videosCount=8&html5ui";
-        if(!checkCookie("Visited")) {
-          writeUserToDatabase();
-        } else {
-          console.log("User already visited");
+        function onBackButtonClick() {
+            window.location.assign("https://eagle.matthewwhitaker.me");
         }
-      }
-      function writeUserToDatabase() {
-        //Ask questions...
-        alert("Hello! Thanks for checking out my eagle project! In order to better track how many people have attended my classes, I will now ask you a few questions. Don't worry, I won't share it with anybody!");
-        var _name = prompt("What is your name? (If you prefer not to answer these questions, hit cancel, and you will be recorded as 'anonymous')");
-        var _class = prompt("What class(es) are you currently planning on attending? (Hit cancel if you aren't currently taking a class)");
-        var _location = prompt("Where are you located right now? (keep it general, I don't need to know your GPS coordinates, just a city and state would be nice, and maybe a ward and stake if you are in Spanish Fork)");
-        alert("Thank you so much!!! I hope you enjoy the classes! Feel free to ask questions in the Q&A box to the right as the classes go on.");
-        //Gather data into one var
-        var d = new Date();
-        var pushData = {
-          name: _name,
-          class: _class,
-          datetime: d.getTime(),
-          location: _location
-        };
-        
-        //Push to database
-        var newPushKey = database.ref('eagleproject').child('users').push().key;
-        var updates = {};
-        updates['/eagleproject/users/'+newPushKey] = pushData;
-        database.ref().update(updates);
-        setCookie("Visited","true",0.0625);
-      }
     </script>
-  </body>
+    <style>
+        body {
+            background-color: #dddddd;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        #video-container {
+            padding-bottom: 56.25%;
+            position: relative;
+            display: block;
+            width: 100%;
+            max-width: 720px;
+        }
+
+        #video-container > iframe {
+            border: 0;
+            position:absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #video-container-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 720px;
+        }
+    </style>
+</head>
+<body style="width:100%; height:100%;">
+<toolbar title="Matthew's Eagle Project" back="true"></toolbar>
+<content style="width:100%; height:100%;">
+    <h1>Matthew's Eagle Court of Honor</h1>
+    <h3>(The ceremony will begin at 7:00 pm MDT on August 4, 2018)</h3>
+    <div id="video-container-container">
+        <div id="video-container">
+            <iframe src="https://www.ustream.tv/embed/23602895?html5ui" webkitallowfullscreen
+                    allowfullscreen frameborder="no" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+</content>
+</body>
 </html>

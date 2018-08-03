@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Matthew Whitaker Eagle Project</title>
-    <mhtml type="accentColor" color="#FFC900"></mhtml>
+    <mhtml type="accentColor" color="red"></mhtml>
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
     <meta name="viewport" content="width=device-width">
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
@@ -50,26 +50,25 @@
             max-width: 720px;
         }
 
-        #video-container {
-            padding-bottom: 56.25%;
-            position: relative;
+        .button {
             display: block;
-            width: 100%;
-            max-width: 720px;
+            text-decoration: none;
+            padding: 20px;
+            margin: 100px auto;
+            max-width: 250px;
+            background-color: red;
+            color: white;
+            text-align:center;
+            box-shadow: 0 0 1px black;
+            transition: all 0.1s linear;
+            font-weight: bolder;
+            border-radius: 5px;
+            text-transform: uppercase;
         }
 
-        #video-container > iframe {
-            border: 0;
-            position:absolute;
-            top: 0;
-            left: 0;
-        }
-
-        #video-container-container {
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            max-width: 720px;
+        .button:hover {
+            box-shadow: 0 0 10px black;
+            transition: all 0.1s linear;
         }
     </style>
 </head>
@@ -78,13 +77,9 @@
 <content style="width:100%; height:100%;">
     <h1>Matthew's Eagle Court of Honor</h1>
     <h3>(The ceremony will begin at 7:00 pm MDT on August 4, 2018)</h3>
-    <div id="video-container-container">
-        <div id="video-container">
-            <iframe src="https://www.ustream.tv/embed/23602895?html5ui" webkitallowfullscreen
-                    allowfullscreen frameborder="no" width="100%" height="100%"></iframe>
-        </div>
-    </div>
-    <h3>Videos:</h3>
+    <a href="live.html" class="button">Click to Watch Live</a>
+    <hr />
+    <h3>Project Videos:</h3>
     <div id="video-list">
         <card padding>
             <h5>Introduction to the Eagle Project</h5>
