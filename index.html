@@ -1,85 +1,164 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Matthew Whitaker Eagle Project</title>
     <mhtml type="accentColor" color="#FFC900"></mhtml>
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
     <meta name="viewport" content="width=device-width">
-      <style>
-          video {
-              width:300px;
-          }
-          card {
-              margin:16px;
-              max-width:350px !important;
-          }
-          body {
-              background-color: #eee;
-          }
-      </style>
-  </head>
-  <body style="width:100%; height:100%;">
+    <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
+    <style>
+        video {
+            width: 300px;
+        }
 
-  <content style="width:100%; height:100%;">
-      <h3>Videos:</h3>
-      <card padding>
-          <h5>Introduction to the Eagle Project</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/EagleProjectIntroSignInOptoff1.mp4?alt=media&token=e81c6874-5932-4ee2-8a2a-99cdd7ed47ae" controls></video><br />
-          This video introduces my eagle project and teaches how to sign in to FamilySearch.
-      </card>
-      <card padding>
-          <h5>Intro To Indexing</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_0off1.mp4?alt=media&token=d9981271-086a-4f03-8819-9fc517b46b12" controls></video><br />
-          This video teaches you the basics of indexing! Taught by Leslie Chandler.
-      </card>
-      <card padding>
-          <h5>Adding Photos and other Memories to your Family Tree</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_2off1trimmed.mp4?alt=media&token=ae7552ec-5739-4c80-9179-43acbc50c64f" controls></video><br />
-          Learn the basics of adding pictures, stories, documents, recordings, and other memories to FamilySearch.
-      </card>
-      <!--<card padding>
-          <h5>Finding Names to take to the Temple</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_3off1.mp4?alt=media&token=dbeeafa6-69af-4c65-b44d-43ff3c72fc1f" controls></video><br />
-          Find your own family names to take to the temple! Taught by Matia Young.
-      </card>-->
-      <card padding>
-          <h5>Searching for Records using FamilySearch</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_5off1trimmed.mp4?alt=media&token=93b2f2bc-784d-4252-aac3-7a10d49ac589" controls></video><br />
-          Learn to efficiently and accurately search records on FamilySearch. Taught by Janet Anderson.
-      </card>
-      <card padding>
-          <h5>Finding Names to take to the Temple</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_6off1trimmed.mp4?alt=media&token=a183de3c-b2ab-4ee4-9e26-d2bd6a5da8d3" controls></video><br />
-          The Wednesday Evening session of the Finding Names to take to the Temple class. Turn it on and let your youth group follow along! Taught by Matia Young.
-      </card>
-      <card padding>
-          <h5>Intro To Indexing</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_7off1trimmed.mp4?alt=media&token=17f80f74-07f7-4a83-9573-67721716e37e" controls></video><br />
-          Another session of the Intro To Indexing class. Taught by Leslie Chandler.
-      </card>
-      <card padding>
-          <h5>Eagle Project Conclusion</h5>
-          <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_8off1trimmed.mp4?alt=media&token=3eaa3864-7d39-42e1-a18e-a12fde463f37" controls></video><br />
-          I say a few words in closing about the Eagle Project. Thanks everybody!
-      </card>
-      <h3>Here is the original schedule (All in 2017):</h3>
+        card {
+            margin: 16px;
+            max-width: 350px !important;
+        }
+
+        body {
+            background-color: #dddddd;
+        }
+
+        #video-list {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            justify-content: center;
+        }
+
+        #video-list > card {
+            flex-basis: 350px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        ul {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 720px;
+        }
+
+        #video-container {
+            padding-bottom: 56.25%;
+            position: relative;
+            display: block;
+            width: 100%;
+            max-width: 720px;
+        }
+
+        #video-container > iframe {
+            border: 0;
+            position:absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #video-container-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 720px;
+        }
+    </style>
+</head>
+<body style="width:100%; height:100%;">
+
+<content style="width:100%; height:100%;">
+    <h1>Matthew's Eagle Court of Honor</h1>
+    <h3>(The ceremony will begin at 7:00 pm MDT on August 4, 2018)</h3>
+    <div id="video-container-container">
+        <div id="video-container">
+            <iframe src="https://www.ustream.tv/embed/23602895?html5ui" webkitallowfullscreen
+                    allowfullscreen frameborder="no" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+    <h3>Videos:</h3>
+    <div id="video-list">
+        <card padding>
+            <h5>Introduction to the Eagle Project</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/EagleProjectIntroSignInOptoff1.mp4?alt=media&token=e81c6874-5932-4ee2-8a2a-99cdd7ed47ae"
+                   controls></video>
+            <br/>
+            This video introduces my eagle project and teaches how to sign in to FamilySearch.
+        </card>
+        <card padding>
+            <h5>Intro To Indexing</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_0off1.mp4?alt=media&token=d9981271-086a-4f03-8819-9fc517b46b12"
+                   controls></video>
+            <br/>
+            This video teaches you the basics of indexing! Taught by Leslie Chandler.
+        </card>
+        <card padding>
+            <h5>Adding Photos and other Memories to your Family Tree</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_2off1trimmed.mp4?alt=media&token=ae7552ec-5739-4c80-9179-43acbc50c64f"
+                   controls></video>
+            <br/>
+            Learn the basics of adding pictures, stories, documents, recordings, and other memories to FamilySearch.
+        </card>
+        <!--<card padding>
+            <h5>Finding Names to take to the Temple</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_3off1.mp4?alt=media&token=dbeeafa6-69af-4c65-b44d-43ff3c72fc1f" controls></video><br />
+            Find your own family names to take to the temple! Taught by Matia Young.
+        </card>-->
+        <card padding>
+            <h5>Searching for Records using FamilySearch</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_5off1trimmed.mp4?alt=media&token=93b2f2bc-784d-4252-aac3-7a10d49ac589"
+                   controls></video>
+            <br/>
+            Learn to efficiently and accurately search records on FamilySearch. Taught by Janet Anderson.
+        </card>
+        <card padding>
+            <h5>Finding Names to take to the Temple</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_6off1trimmed.mp4?alt=media&token=a183de3c-b2ab-4ee4-9e26-d2bd6a5da8d3"
+                   controls></video>
+            <br/>
+            The Wednesday Evening session of the Finding Names to take to the Temple class. Turn it on and let your
+            youth group follow along! Taught by Matia Young.
+        </card>
+        <card padding>
+            <h5>Intro To Indexing</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_7off1trimmed.mp4?alt=media&token=17f80f74-07f7-4a83-9573-67721716e37e"
+                   controls></video>
+            <br/>
+            Another session of the Intro To Indexing class. Taught by Leslie Chandler.
+        </card>
+        <card padding>
+            <h5>Eagle Project Conclusion</h5>
+            <video src="https://firebasestorage.googleapis.com/v0/b/eagle-project-a68fa.appspot.com/o/MyMovie_8off1trimmed.mp4?alt=media&token=3eaa3864-7d39-42e1-a18e-a12fde463f37"
+                   controls></video>
+            <br/>
+            I say a few words in closing about the Eagle Project. Thanks everybody!
+        </card>
+    </div>
+    <h3>Eagle Project Original Schedule (All in 2017):</h3>
     <ul>
-    All times are in Mountain Daylight Time<br />
-    <b>SUN, APR 23</b>
-    <li>Sun Apr 23 @ 4:15 PM - Introduction to my eagle project and 'Signing in to FamilySearch' miniclass</li>
-    <li>Sun Apr 23 @ 5 PM - 'Intro to Indexing' class</li>
-    <b>TUE, APR 25</b>
-    <li>Tue Apr 25 @ 5 PM - 'Finding and adding Memories to FamilySearch' class</li>
-    <li>Tue Apr 25 @ 7 PM - 'Finding Names to Take to the Temple' class</li>
-    <b>WED, APR 26</b>
-    <li>Wed Apr 26 @ 5 PM - 'Searching for Records' class</li>
-    <li>Wed Apr 26 @ 7 PM - 'Finding Names to Take to the Temple' class</li>
-    <b>THU, APR 27</b>
-    <li>Thu Apr 27 @ 5 PM - 'Intro to Indexing' class</li>
-    <li>Thu Apr 27 @ 8:15 PM - Final remarks and thanks by Matthew</li>
+        All times are in Mountain Daylight Time<br/>
+        <b>SUN, APR 23</b>
+        <li>Sun Apr 23 @ 4:15 PM - Introduction to my eagle project and 'Signing in to FamilySearch' miniclass</li>
+        <li>Sun Apr 23 @ 5 PM - 'Intro to Indexing' class</li>
+        <b>TUE, APR 25</b>
+        <li>Tue Apr 25 @ 5 PM - 'Finding and adding Memories to FamilySearch' class</li>
+        <li>Tue Apr 25 @ 7 PM - 'Finding Names to Take to the Temple' class</li>
+        <b>WED, APR 26</b>
+        <li>Wed Apr 26 @ 5 PM - 'Searching for Records' class</li>
+        <li>Wed Apr 26 @ 7 PM - 'Finding Names to Take to the Temple' class</li>
+        <b>THU, APR 27</b>
+        <li>Thu Apr 27 @ 5 PM - 'Intro to Indexing' class</li>
+        <li>Thu Apr 27 @ 8:15 PM - Final remarks and thanks by Matthew</li>
     </ul>
-    </content>
-  <toolbar title="Eagle Project"></toolbar>
-  <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
-  </body>
+</content>
+<toolbar title="Eagle Project"></toolbar>
+</body>
 </html>
